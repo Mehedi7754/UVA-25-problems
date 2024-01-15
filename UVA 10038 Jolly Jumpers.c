@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,i,j,count ,flag,ch[3000],dif[3000],test[3000];
+    while(scanf("%d",&n)!=EOF)
+    {
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&ch[i]);
+        }
+        for(i=0;i<n-1;i++)
+        {
+            dif[i]=abs(ch[i]-ch[i+1]);
+        }
+        count=1;
+        for(i=0;i<n-1;i++)
+        {
+            test[i]=count;
+            count++;
+        }
+        flag=0;
+        for(i=0;i<n-1;i++)
+        {
+               for(j=0;j<n;j++)
+               {
+                  if(test[i]==dif[j])
+                  {
+                      flag=1;
+                  }
+               }
+               if(flag==1)
+               {
+                   flag=0;
+               }
+               else
+               {
+                   flag=2;
+                   break;
+               }
+        }
+        if(flag==2)
+        {
+            printf("Not jolly\n");
+        }
+        else
+        {
+            printf("Jolly\n");
+        }
+    }
+    return 0;
+}
