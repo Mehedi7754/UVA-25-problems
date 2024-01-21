@@ -4,7 +4,7 @@ int main()
     int t,n,max,current,i,j;
     scanf("%d",&t);
     for(i=1;i<=t;i++){
-        max=1;
+        max=0;
         scanf("%d",&n);
         while(n--){
         scanf("%d",&current);
